@@ -57,13 +57,18 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    public double Ingreso(double ingreso){
-    this.saldo = saldo + ingreso ;
-    return saldo;    
+    public double ingreso(double ingreso) {
+        this.saldo = saldo + ingreso;
+        return saldo;
     }
-    public double Reintegro(double reintegro){
-    this.saldo = saldo - reintegro;
-    return saldo;
+
+    public double reintegro(double reintegro) {
+        this.saldo = saldo - reintegro;
+        return saldo;
     }
-    
+
+    public void transferencia(Conta contaDestino, double importe) {
+        this.saldo = this.saldo - importe;
+        contaDestino.setSaldo(contaDestino.getSaldo() + importe);
+    }
 }
